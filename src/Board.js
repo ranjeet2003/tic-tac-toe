@@ -3,22 +3,31 @@ import Square from "./Square";
 
 class Board extends Component {
     state = {
-        squares: ['', '', '', '', '', '', '', '', '']
+        squares: ['', '', '', '', '', '', '', '', ''],
+        xIsNext: true
     }
 
     handleClick = number => () => {
         // console.log(number)
+        if(this.state.squares[number]) {
+            // there is already an X or O there then we return from function so that it can't be overwritten
+            return;
+        }
         const newSquares = [...this.state.squares]
 
-        newSquares[number] = 'X'
-        this.setState({ squares: newSquares })
+        newSquares[number] = this.state.xIsNext ? 'X':'O'
+        this.setState ({
+            squares: newSquares,
+            xIsNext: !this.state.xIsNext
+        })
 
     }
 
     render() {
-        const { squares } = this.state
+        const { squares, xIsNext } = this.state
         return (
             <div className="Board">
+            <h1>Next Step: { xIsNext ? 'X' : 'O'}</h1>
                 <div className = "Row">
                     <Square value={ squares[0] } onClick={this.handleClick(0)} />
                     <Square value={ squares[1] } onClick={this.handleClick(1)} />
