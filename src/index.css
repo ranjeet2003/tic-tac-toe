@@ -16,7 +16,25 @@
 
 .Board {
     font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 .Row {
     display: flex;
+}
+.Reset {
+    margin-top: 1rem;
+    border: 1px solid;
+    color: #374151;
+    font-size: 1.25rem;
+    padding: 1rem 4rem;
+    border-radius: 0.5rem;
+    border-color: #fff;
+
+}
+.Reset:hover {
+    cursor: pointer;
+    background-color: aqua;
 }
