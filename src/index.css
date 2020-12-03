@@ -17,3 +17,6 @@
 .Board {
     font-family: sans-serif;
 }
+.Row {
+    display: flex;
+}
