@@ -1,0 +1,19 @@
+.Square {
+    width: 100px;
+    height:100px ;
+    border: 0;
+    background-color: aliceblue;
+    color: #374151;
+    font-size: 2rem;
+    border: 1px solid #d2d6dc;
+    font-weight: bold;
+
+}
+
+.Square:hover {
+    cursor: pointer;
+}
+
+.Board {
+    font-family: sans-serif;
+}
