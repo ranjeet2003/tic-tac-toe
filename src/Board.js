@@ -3,11 +3,16 @@ import Square from "./Square";
 
 class Board extends Component {
     state = {
-        squares: ['X', '', '', '', '', '', '', '', '']
+        squares: ['', '', '', '', '', '', '', '', '']
     }
 
     handleClick = number => () => {
-        console.log(number)
+        // console.log(number)
+        const newSquares = [...this.state.squares]
+
+        newSquares[number] = 'X'
+        this.setState({ squares: newSquares })
+
     }
 
     render() {
